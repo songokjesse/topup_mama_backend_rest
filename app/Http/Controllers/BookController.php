@@ -68,7 +68,7 @@ class BookController extends Controller
             $books[] = [
                 'name' => $item['name'],
                 'authors' => $item['authors'],
-                'comment_count' => $this->getCommentCount((int) filter_var($item['url'], FILTER_SANITIZE_NUMBER_INT))
+                'comments_count' => $this->getCommentCount((int) filter_var($item['url'], FILTER_SANITIZE_NUMBER_INT))
             ];
         }
         return $books;
@@ -79,7 +79,7 @@ class BookController extends Controller
         return [
             'name' => $aBook['name'],
             'author' => $aBook['authors'],
-            'comment_count' => $this->getCommentCount((int) filter_var($aBook['url'], FILTER_SANITIZE_NUMBER_INT))
+            'comments_count' => $this->getCommentCount((int) filter_var($aBook['url'], FILTER_SANITIZE_NUMBER_INT))
         ];
     }
 
