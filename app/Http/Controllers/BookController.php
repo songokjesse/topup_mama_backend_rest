@@ -78,7 +78,7 @@ class BookController extends Controller
     {
         return [
             'name' => $aBook['name'],
-            'author' => $aBook['authors'],
+            'authors' => $aBook['authors'],
             'comments_count' => $this->getCommentCount((int) filter_var($aBook['url'], FILTER_SANITIZE_NUMBER_INT))
         ];
     }
