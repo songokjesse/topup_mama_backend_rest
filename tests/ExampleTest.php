@@ -2,6 +2,8 @@
 
 use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
+use Illuminate\Testing\Fluent\AssertableJson;
+
 
 class ExampleTest extends TestCase
 {
@@ -18,4 +20,6 @@ class ExampleTest extends TestCase
             $this->app->version(), $this->response->getContent()
         );
     }
+
+
 }

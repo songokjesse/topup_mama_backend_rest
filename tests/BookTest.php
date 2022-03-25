@@ -18,4 +18,10 @@ class BookTest extends TestCase
             $this->app->version(), $this->response->getContent()
         );
     }
+
+    public function test_making_an_api_request_to_book()
+    {
+        $response = $this->json('GET', '/api/v1/books');
+    }
+
 }

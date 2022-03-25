@@ -19,7 +19,8 @@ class Comment extends Model implements AuthenticatableContract, AuthorizableCont
      * @var array
      */
     protected $fillable = [
-        'comments', 'book_id', 'ip_address',
+        'comment', 'book_id', 'ip_address',
     ];
+
 
 }
