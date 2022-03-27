@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Comment;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Client\Response;
 use Illuminate\Http\Request;
@@ -63,6 +64,14 @@ class BookController extends Controller
         return $this->getBookValues($aBook->json());
     }
 
+    public function comments($id){
+       return DB::table('comments')
+            ->where('book_id', $id)
+           ->select('book_id','comment','ip_address', 'created_at')
+           ->orderBy('created_at', 'desc')
+           ->get();
+    }
+
     public function getValidItems($items): array
     {
         $books = [];
@@ -102,6 +111,7 @@ class BookController extends Controller
         //return a sorted Response
         return $responseObject;
     }
+
 
 
 }

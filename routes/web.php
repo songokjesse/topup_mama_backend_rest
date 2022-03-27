@@ -20,6 +20,7 @@ $router->group(['prefix' => 'api/v1/'], function () use ($router) {
     //Book Routes
     $router->get('/books', ['as' => 'ShowBooks', 'uses' => 'BookController@index']);
     $router->get('/book/{id}', ['as' => 'showBook', 'uses' => 'BookController@show']);
+    $router->get('/book/{id}/comments', ['as' => 'showBookComments', 'uses' => 'BookController@comments']);
 
     //Book Comment Route
     $router->get('comments',  ['uses' => 'CommentController@index']);

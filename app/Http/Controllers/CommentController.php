@@ -20,6 +20,7 @@ class CommentController extends Controller
 
     public function  index(){
         $comments = DB::table('comments')
+            ->select('book_id','comment','ip_address', 'created_at')
             ->orderBy('created_at', 'desc')
             ->get();
         return response()->json($comments);

@@ -2,8 +2,10 @@
 
 The movie data should be fetched online from https://anapioficeandfire.com/
 
+
+
 ##API Endpoints
-HEROKU URL = https://topupmama-backend.herokuapp.com/api/v1/
+HEROKU URL = https://topupmama-backend.herokuapp.com/
 ### Books Endpoint
     GET /api/v1/books
     GET /api/v1/books?name={name}
@@ -30,7 +32,7 @@ HEROKU URL = https://topupmama-backend.herokuapp.com/api/v1/
             "comments_count": 1
         }
     GET /api/v1/books?fromReleaseDate={fromReleaseDate}&toReleaseDate={toReleaseDate}
-    response: Returns book filtered by data
+    response: Returns book filtered by date
         {
             "name": "A Game of Thrones",
             "authors": [
@@ -39,6 +41,13 @@ HEROKU URL = https://topupmama-backend.herokuapp.com/api/v1/
             "comments_count": 1
         }
     GET /api/vi/book/{id}/comments
+    response: Returns a collection of book comments ordered in a descending order
+	{
+		"book_id": "1",
+		"comment": "ghfhgfhgfhgfh\\",
+		"ip_address": "127.0.0.1",
+		"created_at": "2022-03-22 14:41:43"
+	},
 ### Characters
     GET /api/v1/characters
     GET /api/v1/characters?gender={gender}
