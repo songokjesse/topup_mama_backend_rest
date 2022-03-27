@@ -23,7 +23,7 @@ HEROKU URL = https://topupmama-backend.herokuapp.com/
             "comments_count": 1
         }
     GET /api/v1/books?name={name}
-    response: Returns a specific book specified by name {A Game of Thrones} 
+    response: Returns a book specified by name {A Game of Thrones} 
         {
             "name": "A Game of Thrones",
             "authors": [
