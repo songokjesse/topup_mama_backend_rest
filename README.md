@@ -1,6 +1,6 @@
 # TOPUP MAMA LUMEN REST API
 
-PHP(Lumen) API is used for listing the
+The REST API is used for listing the
 names of books along with their authors and comment count, adding and listing
 anonymous comments for a book, and getting the character list for a book.
 The movie data is  fetched online from https://anapioficeandfire.com/ using the laravel Http-client API.
