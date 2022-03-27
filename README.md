@@ -3,6 +3,7 @@
 The movie data should be fetched online from https://anapioficeandfire.com/
 
 ##API Endpoints
+HEROKU URL = https://topupmama-backend.herokuapp.com/api/v1/
 ### Books
     GET /api/v1/books
         response: Returns a collection of Books
