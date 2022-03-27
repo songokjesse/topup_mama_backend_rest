@@ -26,8 +26,8 @@ $router->group(['prefix' => 'api/v1/'], function () use ($router) {
     $router->get('comments',  ['uses' => 'CommentController@index']);
     $router->get('comment/{id}', ['uses' => 'CommentController@show']);
     $router->post('comments', ['uses' => 'CommentController@create']);
-    $router->delete('comments/{id}', ['uses' => 'CommentController@delete']);
-    $router->put('comments/{id}', ['uses' => 'CommentController@update']);
+//    $router->delete('comments/{id}', ['uses' => 'CommentController@delete']);
+//    $router->put('comments/{id}', ['uses' => 'CommentController@update']);
 
     //Character Route
     $router->get('characters',  ['uses' => 'CharacterController@index']);

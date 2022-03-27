@@ -55,6 +55,7 @@ HEROKU URL = https://topupmama-backend.herokuapp.com/
     GET /api/v1/characters?sort_by={value}&order={order}
 ### Comments
     GET /api/v1/comments
+    GET /api/v1/comment/{id}
     POST /api/v1/comments
 
 ## Official Documentation

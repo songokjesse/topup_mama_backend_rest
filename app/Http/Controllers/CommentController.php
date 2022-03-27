@@ -45,8 +45,4 @@ class CommentController extends Controller
 
         return response()->json($comment);
     }
-    public function store(){
-    }
-
-    //
 }
