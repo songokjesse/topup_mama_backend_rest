@@ -21,14 +21,14 @@ $router->group(['prefix' => 'api/v1/'], function () use ($router) {
     $router->get('/books', ['as' => 'ShowBooks', 'uses' => 'BookController@index']);
     $router->get('/book/{id}', ['as' => 'showBook', 'uses' => 'BookController@show']);
 
-    //Book Comment
+    //Book Comment Route
     $router->get('comments',  ['uses' => 'CommentController@index']);
-
     $router->get('comment/{id}', ['uses' => 'CommentController@show']);
-
     $router->post('comments', ['uses' => 'CommentController@create']);
-
     $router->delete('comments/{id}', ['uses' => 'CommentController@delete']);
-
     $router->put('comments/{id}', ['uses' => 'CommentController@update']);
+
+    //Character Route
+    $router->get('characters',  ['uses' => 'CharacterController@index']);
+
 });

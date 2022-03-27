@@ -28,7 +28,8 @@ class BookController extends Controller
         if ($request->all()) {
                 $filteredBooks =  Http::get('https://anapioficeandfire.com/api/books/',$request->all());
                 if ($filteredBooks->successful()) {
-                    return $this->getValidItems($filteredBooks->json());
+                    $sorted_by_date = $this->sortResponse($filteredBooks->json());
+                    return $this->getValidItems($sorted_by_date);
                 }
                 if ($filteredBooks->throw()) {
                     return $filteredBooks->throw()->json();
@@ -37,12 +38,13 @@ class BookController extends Controller
 //        Else return all the books
         $allBooks = Http::get('https://anapioficeandfire.com/api/books');
         if ($allBooks->successful()) {
-           return $this->getValidItems($allBooks->json());
+            $sorted_by_date = $this->sortResponse($allBooks->json());
+            return $this->getValidItems($sorted_by_date);
         }
         if ($allBooks->throw()) {
             return $allBooks->throw()->json();
         }
-        return $this->getValidItems($allBooks->json());
+        return $this->getValidItems($this->sortResponse($allBooks->json()));
     }
 
     /**
@@ -88,6 +90,17 @@ class BookController extends Controller
         return DB::table('comments')
          ->where('book_id', $book_id)
          ->count();
+    }
+
+    public function sortResponse($responseObject){
+
+        $sort_by = array_column($responseObject, 'released');
+
+//        use the array_multisort() to sort our responseObject
+        array_multisort($sort_by, SORT_ASC, $responseObject);
+
+        //return a sorted Response
+        return $responseObject;
     }
 
 
