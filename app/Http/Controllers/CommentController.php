@@ -31,7 +31,11 @@ class CommentController extends Controller
         return response()->json($comment);
     }
 
-    public function create(Request $request){
+    /**
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function create(Request $request): \Illuminate\Http\JsonResponse
+    {
         $this->validate($request, [
             'comment' => 'required|max:500',
             'book_id' => 'required',
