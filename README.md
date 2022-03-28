@@ -11,7 +11,7 @@ to communicate with other web applications
 
 
 ## API Endpoints
-**FRONTEND URL** = https://topup-mama-frontend.vercel.app/
+**FRONTEND VERCEL(nextjs) URL** = https://topup-mama-frontend.vercel.app/
 
 **BACKEND HEROKU URL** = https://topupmama-backend.herokuapp.com/
 ### Books Endpoint
