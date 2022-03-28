@@ -8,6 +8,19 @@ The movie data is  fetched online from https://anapioficeandfire.com/ using the 
 The http-client is wrapped around the Guzzle HTTP client, allowing you to quickly make outgoing HTTP requests
 to communicate with other web applications
 
+**Dependencies**
+- Composer
+- PHP 7.2^
+- Database(Postgresql/Mysql/Mariadb)
+- Terminal or Command Line Access
+
+**Deployment**
+1. Clone the git directory https://github.com/songokjesse/topup_mama_backend_rest.git
+2. Change the directory 
+3. Install project dependencies using **[composer install]** on the terminal
+4. Create an environment variable file **[.env]** and add the database connection parameters
+5. Run database migrations  using **[php artisan migrate]** on the terminal
+6. Run tests **[ vendor/bin/phpunit tests ]** on the terminal
 
 
 ## API Endpoints
